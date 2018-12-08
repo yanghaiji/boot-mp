@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.javayh.mapper.JsSysOfficeMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.javayh.entity.JsSysOffice">
+        <id column="office_code" property="officeCode" />
+        <result column="parent_code" property="parentCode" />
+        <result column="parent_codes" property="parentCodes" />
+        <result column="tree_sort" property="treeSort" />
+        <result column="tree_sorts" property="treeSorts" />
+        <result column="tree_leaf" property="treeLeaf" />
+        <result column="tree_level" property="treeLevel" />
+        <result column="tree_names" property="treeNames" />
+        <result column="view_code" property="viewCode" />
+        <result column="office_name" property="officeName" />
+        <result column="full_name" property="fullName" />
+        <result column="office_type" property="officeType" />
+        <result column="leader" property="leader" />
+        <result column="phone" property="phone" />
+        <result column="address" property="address" />
+        <result column="zip_code" property="zipCode" />
+        <result column="email" property="email" />
+        <result column="status" property="status" />
+        <result column="create_by" property="createBy" />
+        <result column="create_date" property="createDate" />
+        <result column="update_by" property="updateBy" />
+        <result column="update_date" property="updateDate" />
+        <result column="remarks" property="remarks" />
+        <result column="corp_code" property="corpCode" />
+        <result column="corp_name" property="corpName" />
+
+    </resultMap>
+
+    <select id="getListAll" resultType="com.javayh.TreeNode">
+        select * from js_sys_office
+    </select>
+
+</mapper>
