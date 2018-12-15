@@ -1,6 +1,10 @@
 package com.javayh.entity;
 
 import com.baomidou.mybatisplus.annotations.TableName;
+import com.javayh.excel.annotation.ExcelField;
+import com.javayh.excel.annotation.ExcelSheet;
+import org.apache.poi.hssf.util.HSSFColor;
+
 import java.io.Serializable;
 
 /**
@@ -12,12 +16,16 @@ import java.io.Serializable;
  * @since 2018-10-16
  */
 @TableName("sys_user")
+@ExcelSheet(name = "用户列表", headColor = HSSFColor.HSSFColorPredefined.BLUE)
 public class SysUser implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    
+
+    @ExcelField(name = "用户ID")
     private String id;
+    @ExcelField(name = "用户姓名")
     private String username;
+    @ExcelField(name = "用户密码")
     private String password;
 
 

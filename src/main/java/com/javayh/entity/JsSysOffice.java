@@ -5,6 +5,9 @@ import java.util.Date;
 import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.annotations.TableName;
+
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.List;
 
@@ -35,6 +38,7 @@ public class JsSysOffice implements Serializable {
      * 所有父级编号
      */
     @TableField("parent_codes")
+    @NotBlank(message = "not_blank")
     private String parentCodes;
     /**
      * 本级排序号（升序）
