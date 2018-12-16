@@ -3,11 +3,9 @@ package com.javayh.mapper;
 import com.javayh.entity.JsSysOffice;
 import com.baomidou.mybatisplus.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.ResultType;
-import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Component;
 
-import com.javayh.TreeNode;
+import com.javayh.util.tree.TreeNode;
 import java.util.List;
 
 /**
@@ -22,7 +20,7 @@ import java.util.List;
 @Mapper
 public interface JsSysOfficeMapper extends BaseMapper<JsSysOffice> {
 
-//    @ResultType(com.javayh.TreeNode.class)
+//    @ResultType(TreeNode.class)
 //    @Select(value = "select * from js_sys_office")
     List<TreeNode> getListAll();
 }

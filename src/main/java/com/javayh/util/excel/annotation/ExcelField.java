@@ -1,5 +1,6 @@
-package com.javayh.excel.annotation;
+package com.javayh.util.excel.annotation;
 
+import org.apache.poi.hssf.usermodel.HSSFFont;
 import org.apache.poi.ss.usermodel.HorizontalAlignment;
 
 import java.lang.annotation.*;
@@ -36,14 +37,14 @@ public @interface ExcelField {
      *
      * @return int
      */
-    int higet() default 0;
+    int height() default 0;
 
     /**
      * 水平对齐方式
      *
      * @return HorizontalAlignment
      */
-    HorizontalAlignment align() default HorizontalAlignment.LEFT;
+    HorizontalAlignment align() default HorizontalAlignment.CENTER_SELECTION;
 
     /**
      * 时间格式化，日期类型时生效

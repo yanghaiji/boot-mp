@@ -1,7 +1,4 @@
-package com.javayh;
-
-import com.baomidou.mybatisplus.annotations.TableField;
-import com.baomidou.mybatisplus.annotations.TableId;
+package com.javayh.util.tree;
 
 import java.math.BigDecimal;
 import java.util.Date;

@@ -3,7 +3,7 @@ package com.javayh.service;
 import com.javayh.entity.JsSysOffice;
 import com.baomidou.mybatisplus.service.IService;
 
-import com.javayh.TreeNode;
+import com.javayh.util.tree.TreeNode;
 import java.util.List;
 
 /**

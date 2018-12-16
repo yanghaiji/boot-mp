@@ -1,7 +1,7 @@
 package com.javayh;
 
 import com.javayh.entity.SysUser;
-import com.javayh.excel.ExcelExportUtil;
+import com.javayh.util.excel.ExcelExportUtil;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -19,7 +19,7 @@ public class BootMpApplicationTests {
     @Test
     public void contextLoads() throws Exception{
         List<SysUser> list = new ArrayList<>();
-        for(int i =0;i<10000;i++){
+        for(int i =0;i<100;i++){
             SysUser sysUser = new SysUser();
             sysUser.setId("User"+i);
             sysUser.setUsername("UserName"+i);
@@ -32,7 +32,7 @@ public class BootMpApplicationTests {
 //        String keyLvaue = "用戶id:id,姓名:username,密码:password";
 //        ExcelUtil.exportExcel("C:/Users/yanghaiji/Desktop/www.xlsx",keyLvaue,list,"com.javayh.entity.SysUser" );
 
-        ExcelExportUtil.exportToFile("C:/Users/yanghaiji/Desktop/www.xlsx",list);
+        ExcelExportUtil.exportToFile("C:/Users/yanghaiji/Desktop/12www.xlsx",list);
 //        ExcelUtils.write(list,"C:/Users/yanghaiji/Desktop/www.xlsx");
     }
 

@@ -1,9 +1,8 @@
 package com.javayh.controller;
 
 
-import com.javayh.BuildTree;
-import com.javayh.TreeNode;
-import com.javayh.entity.JsSysOffice;
+import com.javayh.util.tree.BuildTree;
+import com.javayh.util.tree.TreeNode;
 import com.javayh.entity.SysUser;
 import com.javayh.service.JsSysOfficeService;
 import com.javayh.service.SysUserService;

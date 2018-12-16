@@ -1,8 +1,8 @@
 package com.javayh.entity;
 
 import com.baomidou.mybatisplus.annotations.TableName;
-import com.javayh.excel.annotation.ExcelField;
-import com.javayh.excel.annotation.ExcelSheet;
+import com.javayh.util.excel.annotation.ExcelField;
+import com.javayh.util.excel.annotation.ExcelSheet;
 import org.apache.poi.hssf.util.HSSFColor;
 
 import java.io.Serializable;
@@ -21,11 +21,11 @@ public class SysUser implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @ExcelField(name = "用户ID")
+    @ExcelField(name = "用户ID",width =1,height = 1)
     private String id;
-    @ExcelField(name = "用户姓名")
+    @ExcelField(name = "用户姓名",width = -35,height = -20)
     private String username;
-    @ExcelField(name = "用户密码")
+    @ExcelField(name = "用户密码",width = -35,height = -20)
     private String password;
 
 

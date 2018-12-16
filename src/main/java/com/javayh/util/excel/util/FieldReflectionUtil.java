@@ -1,4 +1,4 @@
-package com.javayh.excel.util;
+package com.javayh.util.excel.util;
 
 
 import java.lang.reflect.Field;
@@ -6,7 +6,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import com.javayh.excel.annotation.ExcelField;
+import com.javayh.util.excel.annotation.ExcelField;
 
 /**
   * api request field, reflect util

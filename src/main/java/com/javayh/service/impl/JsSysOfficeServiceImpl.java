@@ -1,6 +1,6 @@
 package com.javayh.service.impl;
 
-import com.javayh.TreeNode;
+import com.javayh.util.tree.TreeNode;
 import com.javayh.entity.JsSysOffice;
 import com.javayh.mapper.JsSysOfficeMapper;
 import com.javayh.service.JsSysOfficeService;

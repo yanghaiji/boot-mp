@@ -1,8 +1,8 @@
-package com.javayh.excel;
+package com.javayh.util.excel;
 
-import com.javayh.excel.annotation.ExcelField;
-import com.javayh.excel.annotation.ExcelSheet;
-import com.javayh.excel.util.FieldReflectionUtil;
+import com.javayh.util.excel.util.FieldReflectionUtil;
+import com.javayh.util.excel.annotation.ExcelField;
+import com.javayh.util.excel.annotation.ExcelSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.*;
 import org.slf4j.Logger;
@@ -100,6 +100,7 @@ public class ExcelExportUtil {
         // sheet header row
         CellStyle[] fieldDataStyleArr = new CellStyle[fields.size()];
         int[] fieldWidthArr = new int[fields.size()];
+        int[] fieldHeightArr = new int[fields.size()];
         Row headRow = sheet.createRow(0);
         for (int i = 0; i < fields.size(); i++) {
 
@@ -109,18 +110,20 @@ public class ExcelExportUtil {
 
             String fieldName = field.getName();
             int fieldWidth = 0;
+            int fieldHeight = 0;
             HorizontalAlignment align = null;
             if (excelField != null) {
                 if (excelField.name()!=null && excelField.name().trim().length()>0) {
                     fieldName = excelField.name().trim();
                 }
                 fieldWidth = excelField.width();
+                fieldHeight =excelField.height();
                 align = excelField.align();
             }
 
-            // field width
+            // field width height
             fieldWidthArr[i] = fieldWidth;
-
+            fieldHeightArr[i] = fieldHeight;
             // head-style、field-data-style
             CellStyle fieldDataStyle = workbook.createCellStyle();
             if (align != null) {
@@ -170,12 +173,19 @@ public class ExcelExportUtil {
         // sheet finally
         for (int i = 0; i < fields.size(); i++) {
             int fieldWidth = fieldWidthArr[i];
+            int fieldHeight = fieldWidthArr[i];
             if (fieldWidth > 0) {
                 sheet.setColumnWidth(i, fieldWidth);
             } else {
                 sheet.autoSizeColumn((short)i);
             }
+            if (fieldHeight > 0) {
+                sheet.setColumnWidth(i, fieldHeight);
+            } else {
+                sheet.autoSizeColumn((short)i);
+            }
         }
+
     }
 
     /**
