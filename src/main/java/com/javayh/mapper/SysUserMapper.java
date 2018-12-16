@@ -3,9 +3,12 @@ package com.javayh.mapper;
 import com.javayh.entity.SysUser;
 import com.baomidou.mybatisplus.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.ResultType;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 import org.springframework.stereotype.Component;
+
+import java.util.Map;
 
 /**
  * <p>
@@ -21,4 +24,8 @@ public interface SysUserMapper extends BaseMapper<SysUser> {
 
     @Update(value = "update sys_user set username=#{username},password=#{password} where id=#{id}")
     SysUser updateSysUser(String username,String password,String id);
+
+    @ResultType(value = SysUser.class)
+    @Update(value = "update sys_user set username=#{username},password=#{password} where id=#{id}")
+    int updateMap(Map<String,Object> map);
 }

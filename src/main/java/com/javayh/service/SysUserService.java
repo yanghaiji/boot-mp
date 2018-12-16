@@ -1,7 +1,9 @@
 package com.javayh.service;
 
-import com.javayh.entity.SysUser;
 import com.baomidou.mybatisplus.service.IService;
+import com.javayh.entity.SysUser;
+
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * <p>
@@ -12,5 +14,5 @@ import com.baomidou.mybatisplus.service.IService;
  * @since 2018-10-16
  */
 public interface SysUserService extends IService<SysUser> {
-
+   int updateSysUser(HttpServletRequest request);
 }
