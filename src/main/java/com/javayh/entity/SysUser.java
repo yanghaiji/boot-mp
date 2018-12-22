@@ -17,9 +17,7 @@ import java.io.Serializable;
  */
 @TableName("sys_user")
 @ExcelSheet(name = "用户列表", headColor = HSSFColor.HSSFColorPredefined.BLUE)
-public class SysUser implements Serializable {
-
-    private static final long serialVersionUID = 1L;
+public class SysUser{
 
     @ExcelField(name = "用户ID",width =1,height = 1)
     private String id;

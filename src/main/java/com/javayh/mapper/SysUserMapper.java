@@ -8,6 +8,7 @@ import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -28,4 +29,7 @@ public interface SysUserMapper extends BaseMapper<SysUser> {
     @ResultType(value = SysUser.class)
     @Update(value = "update sys_user set username=#{username},password=#{password} where id=#{id}")
     int updateMap(Map<String,Object> map);
+
+    @Select(value = "select * from sys_user")
+    List<SysUser> findAll();
 }

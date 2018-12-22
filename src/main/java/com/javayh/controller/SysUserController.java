@@ -55,6 +55,11 @@ public class SysUserController  {
         return sysUserService.updateSysUser(request);
     }
 
+    @GetMapping("findAll")
+    public List<SysUser> findAll(HttpServletRequest request){
+        return sysUserService.findAll();
+    }
+
     @GetMapping("/download")
     public String downloadFile(HttpServletRequest request, HttpServletResponse response) {
         String fileName = "计划安排表.xlsx";// 文件名

@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.service.IService;
 import com.javayh.entity.SysUser;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 /**
  * <p>
@@ -15,4 +16,5 @@ import javax.servlet.http.HttpServletRequest;
  */
 public interface SysUserService extends IService<SysUser> {
    int updateSysUser(HttpServletRequest request);
+   List<SysUser> findAll();
 }
