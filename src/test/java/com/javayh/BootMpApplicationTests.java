@@ -36,4 +36,20 @@ public class BootMpApplicationTests {
 //        ExcelUtils.write(list,"C:/Users/yanghaiji/Desktop/www.xlsx");
     }
 
+    public static void main(String[] args) {
+        String str = "";
+        switch (str){
+            case "超过":
+                System.out.println("1212");
+                break;
+            case "超过2":
+                System.out.println("1212333333");
+                break;
+            case "":
+                System.out.println("asdfghjkl");
+                break;
+
+        }
+    }
+
 }
