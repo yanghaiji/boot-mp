@@ -5,8 +5,10 @@ import com.javayh.entity.SysUser;
 import com.javayh.mapper.SysUserMapper;
 import com.javayh.service.JsSysOfficeService;
 import com.javayh.service.SysUserService;
+import com.javayh.util.excel.ExcelExportUtil;
 import com.javayh.util.tree.BuildTree;
 import com.javayh.util.tree.TreeNode;
+import org.apache.poi.ss.usermodel.Workbook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
+import java.net.URLEncoder;
 import java.util.List;
 
 /**
@@ -55,9 +58,18 @@ public class SysUserController  {
         return sysUserService.updateSysUser(request);
     }
 
+    /**
+      * 实现excel导出
+      * @author Dylan Yang
+      */
     @GetMapping("findAll")
-    public List<SysUser> findAll(HttpServletRequest request){
-        return sysUserService.findAll();
+    public void findAll(HttpServletRequest request,HttpServletResponse response) throws IOException {
+        List<SysUser> sysUsers = sysUserService.findAll();
+        response.setContentType("application/ms-excel;charset=UTF-8");
+        response.setHeader("Content-Disposition", "attachment;filename="
+                .concat(String.valueOf(URLEncoder.encode("121.xlsx", "UTF-8"))));
+        Workbook sheets = ExcelExportUtil.exportWorkbook(sysUsers);
+        sheets.write(response.getOutputStream());
     }
 
     @GetMapping("/download")
